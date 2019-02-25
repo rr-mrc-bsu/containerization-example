@@ -6,8 +6,20 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+library(reticulate) # make python/R interoperable
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R and Python
+## Seamless R and python integration using Rmarkdown
+
+[bla]
+
+## Start in python
+
+```{python}
+import pandas
+```
+
+[copy from reticulate package, cite properly!]
+
 
