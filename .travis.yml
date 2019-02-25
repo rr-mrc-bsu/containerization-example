@@ -1,4 +1,5 @@
 os:   linux
+dist: xenial
 sudo: true
 
 before_install:
