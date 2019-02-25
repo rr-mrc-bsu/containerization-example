@@ -5,12 +5,8 @@ MAINTAINER Kevin Kunzmann kevin.kunzmann@mrc-bsu.cam.ac.uk
 # update apt
 RUN sudo apt-get update
 
-# install prerequisits
-RUN sudo apt-get -y install libcurl4-openssl-dev
-
 # install required R packages
 RUN R -e "install.packages('rticulate')"
-RUN R -e "devtools::install_github('kkmann/describr')"
 
 # install python
 RUN sudo apt-get install -y python3-pip python3-dev python3-tk
