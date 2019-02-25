@@ -1,5 +1,5 @@
 singularity:
-    "docker://kkmann/rr-containerization-example@sha256:83179a6865013043474cd9bc7cc7739a0d3eebaf8b5846133667b9ef1ddce2e8"
+    "docker://kkmann/rr-containerization-example@sha256:5225e53f934d749bf3017f140e5169b0d2eadc0512799b89c2f854a2d002d0c4"
 
 rule build_report:
     input:
