@@ -1,0 +1,8 @@
+#!/bin/bash
+USERNAME="kkmann"
+IMAGE="rr-containerization-example"
+BUILDNAME=$USERNAME/$IMAGE
+
+docker build --no-cache -t $BUILDNAME .
+
+docker push $BUILDNAME
