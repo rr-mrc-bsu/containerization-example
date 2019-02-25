@@ -18,6 +18,9 @@ script:
   # define exact sha26 hash of container to use
   - hash=83179a6865013043474cd9bc7cc7739a0d3eebaf8b5846133667b9ef1ddce2e8
   # execute GNU make inside singularity container
-  - singularity exec docker://kkmann/containerization-example@sha256:$hash make
+  - singularity exec docker://kkmann/rr-containerization-example@sha256:$hash make
   # test that output file exists, clean afterwards
   - test -e r-and-python.html; rm r-and-python.html
+  # build using snakemake (native) and singularity container
+
+
