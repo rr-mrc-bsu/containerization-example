@@ -5,22 +5,22 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-7
+      - g++-8
     env:
-      - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+      - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 
 
 language: python
-python: 3.7
+python: 3.6
 
 before_install:
   - eval "${MATRIX_EVAL}"
   # make all travis scripts executable
   - sudo chmod u+x .travis/*.sh
   # upgrade pip
-  - pip3 install --upgrade pip
+  - pip install --upgrade pip
   # install snakemake
-  - pip3 install snakemake
+  - pip install snakemake
   # install singularity
   - /bin/bash .travis/install_singularity.sh
 
