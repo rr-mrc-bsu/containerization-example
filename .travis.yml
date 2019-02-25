@@ -1,0 +1,27 @@
+os:   linux
+dist: xenial
+
+language: python
+python: 3.6
+
+before_install:
+  # make all travis scripts executable
+  - sudo chmod u+x .travis/*.sh
+  # upgrade pip
+  - pip install --upgrade pip
+  # install snakemake
+  - pip install snakemake
+  # install singularity
+  - /bin/bash .travis/install_singularity.sh
+
+script:
+  # define exact sha256 hash of container to use
+  - hash=5225e53f934d749bf3017f140e5169b0d2eadc0512799b89c2f854a2d002d0c4
+  # execute GNU make inside singularity container
+  - singularity exec docker://kkmann/rr-containerization-example@sha256:$hash make
+  # test that output file exists, clean afterwards
+  - test -e r-and-python.html; rm r-and-python.html
+  # build using snakemake (native) and singularity container
+  - snakemake --use-singularity
+  # test that output file exists, clean afterwards
+  - test -e r-and-python.html; rm r-and-python.html
