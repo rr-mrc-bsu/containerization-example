@@ -7,10 +7,12 @@ python: 3.7
 before_install:
   # make all travis scripts executable
   - sudo chmod u+x .travis/*.sh
+  # upgrade pip
+  - pip3 install --upgrade pip
+  # install snakemake
+  - pip3 install snakemake
   # install singularity
   - /bin/bash .travis/install_singularity.sh
-  # install snakemake
-  - pip3 install -upgrade pip; pip3 install snakemake
 
 script:
   - singularity version
