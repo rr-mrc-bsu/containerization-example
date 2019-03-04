@@ -15,6 +15,10 @@ before_install:
   - /bin/bash .travis/install_singularity.sh
 
 script:
+  # define exact sha256 hash of container to use
+  - hash=17414f63929b0283f82e70ded3ca9cd9b61f37e13fe3d103a2bdf24b9056114e
+  # execute GNU make inside singularity container
+  - singularity exec docker://kkmann/rr-containerization-example@sha256:$hash make
   # execute GNU make inside singularity container
   - singularity exec docker://kkmann/rr-containerization-example:latest make
   # test that output file exists, clean afterwards

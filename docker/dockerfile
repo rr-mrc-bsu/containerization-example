@@ -5,10 +5,10 @@ MAINTAINER Kevin Kunzmann kevin.kunzmann@mrc-bsu.cam.ac.uk
 # update apt
 RUN sudo apt-get update
 
-# install required R packages
-RUN R -e "install.packages('reticulate')"
-
-# install python
+# install python and required packages
 RUN sudo apt-get install -y python3-pip python3-dev python3-tk
 RUN sudo pip3 install -U pip
-RUN sudo pip3 install -U pandas matplotlib
+RUN sudo pip3 install numpy matplotlib tensorflow
+
+# install required R packages
+RUN R -e "install.packages('reticulate')"

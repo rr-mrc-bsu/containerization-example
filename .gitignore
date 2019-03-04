@@ -3,3 +3,4 @@ containerization-example.Rproj
 *.html
 .snakemake
 .Rhistory
+.cache
